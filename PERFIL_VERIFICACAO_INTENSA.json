@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "model": "haiku",
+            "timeout": 30,
+            "prompt": "Você é um revisor objetivo de encerramento. Contexto JSON: $ARGUMENTS. Se stop_hook_active for true, responda {\"ok\":true}. Se não houve alteração de código ou se a resposta final deixa claro o que foi ou não testado, responda {\"ok\":true}. Caso haja evidência clara de que uma verificação necessária e viável foi omitida e ainda possa ser realizada com segurança, responda {\"ok\":false,\"reason\":\"Realize a verificação específica necessária ou explique claramente por que não pôde executá-la.\"}. Não bloqueie tarefas informativas, tarefas sem testes existentes, ou ambientes indisponíveis. Não exija trabalho infinito. Responda apenas JSON válido."
+          }
+        ]
+      }
+    ]
+  }
+}
